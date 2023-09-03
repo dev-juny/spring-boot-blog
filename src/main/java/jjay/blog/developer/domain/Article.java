@@ -3,7 +3,9 @@ package jjay.blog.developer.domain;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Entity //엔티티 지정
 @Getter
 public class Article {
@@ -24,8 +26,11 @@ public class Article {
         this.title = title;
         this.content = content;
     }
-    protected Article() { //기본 생성자
-        
+
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 
 }
